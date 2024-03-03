@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Employee {
     @Id
     @GeneratedValue (generator="uuid-hibernate-generator")
