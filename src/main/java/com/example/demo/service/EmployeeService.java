@@ -5,11 +5,11 @@ import com.example.demo.domain.Employee;
 import com.example.demo.dtos.EmployeeDTO;
 import com.example.demo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 @Service
-
 public class EmployeeService {
 
     @Autowired
