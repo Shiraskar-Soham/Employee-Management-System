@@ -7,9 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableAutoConfiguration
-@ComponentScan(basePackages = {"com.example.demo.repository", "com.example.demo.controller", "com.example.demo.service"})
-@EnableJpaRepositories("src/main/java/com/example/demo/repository/EmployeeRepository")
+@ComponentScan("com.example.demo")
+@EnableJpaRepositories("com.example.demo.repository")
 public class UserApplication {
 
 	public static void main(String[] args) {
