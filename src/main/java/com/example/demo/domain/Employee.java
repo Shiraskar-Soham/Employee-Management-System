@@ -12,6 +12,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
+@Table(name="employee")
 public class Employee {
     @Id
     @GeneratedValue (generator="uuid-hibernate-generator")
