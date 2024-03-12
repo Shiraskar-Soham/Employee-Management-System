@@ -41,4 +41,16 @@ public class EmployeeService {
         employeeRepository.save(e);
         return true;
     }
+
+    public EmployeeDTO getEmployeeByEmpCode(String empCode) {
+        if(ObjectUtils.isEmpty(empCode)) return null;
+        Employee e = employeeRepository.findByEmpCode(empCode);
+        if(ObjectUtils.isEmpty(e)) return null;
+        return employeeConvertor.convert(e);
+    }
+
+    public String getNameByMobile(String mobile) {
+        if(ObjectUtils.isEmpty(mobile)) return null;
+        return employeeRepository.findNameByMobile(mobile);
+    }
 }

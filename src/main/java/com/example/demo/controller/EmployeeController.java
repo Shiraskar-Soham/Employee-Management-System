@@ -26,4 +26,14 @@ public class EmployeeController {
     public boolean createEmployee(@RequestBody EmployeeDTO employeeDTO){
         return employeeService.createEmployee(employeeDTO);
     }
+
+    @GetMapping("/findByEmpCode")
+    public EmployeeDTO getEmployeeByEmpCode(@RequestParam("empCode") String empCode){
+        return employeeService.getEmployeeByEmpCode(empCode);
+    }
+
+    @GetMapping("/nameByMobile")
+    public String getNameByMobile (@RequestParam("mobile") String mobile){
+        return employeeService.getNameByMobile(mobile);
+    }
 }
