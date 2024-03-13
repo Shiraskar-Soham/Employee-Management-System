@@ -56,7 +56,7 @@ public class EmployeeService {
 
     public List<EmployeeDTO> getEmployeeByAge(int age) {
         if(ObjectUtils.isEmpty(age)) return null;
-        List<Employee> e = employeeRepository.findByAge(age);
+        List<Employee> e = employeeRepository.findByAgeGreaterThan(age);
         if(ObjectUtils.isEmpty(e)) return null;
         List<EmployeeDTO> empList = new ArrayList<>();
 
