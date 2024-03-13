@@ -16,4 +16,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, String> {
 
     @Query(value = "select name from employee where mobile = ?1", nativeQuery = true)
     String findNameByMobile(String mobile);
+@Query(value = "select * from employee where age >= ?1", nativeQuery = true)
+    List<Employee> findByAge(int age);
 }

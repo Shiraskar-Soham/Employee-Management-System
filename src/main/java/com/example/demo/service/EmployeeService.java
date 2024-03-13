@@ -53,4 +53,16 @@ public class EmployeeService {
         if(ObjectUtils.isEmpty(mobile)) return null;
         return employeeRepository.findNameByMobile(mobile);
     }
+
+    public List<EmployeeDTO> getEmployeeByAge(int age) {
+        if(ObjectUtils.isEmpty(age)) return null;
+        List<Employee> e = employeeRepository.findByAge(age);
+        if(ObjectUtils.isEmpty(e)) return null;
+        List<EmployeeDTO> empList = new ArrayList<>();
+
+        for(Employee employee : e){
+            empList.add(employeeConvertor.convert(employee));
+        }
+        return empList;
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.domain.Employee;
 import com.example.demo.dtos.EmployeeDTO;
 import com.example.demo.service.EmployeeService;
 import java.util.List;
@@ -35,5 +36,10 @@ public class EmployeeController {
     @GetMapping("/nameByMobile")
     public String getNameByMobile (@RequestParam("mobile") String mobile){
         return employeeService.getNameByMobile(mobile);
+    }
+
+    @GetMapping ("/findByAge")
+    public List<EmployeeDTO> getEmployeeByAge(@RequestParam("age") int age){
+        return employeeService.getEmployeeByAge(age);
     }
 }
